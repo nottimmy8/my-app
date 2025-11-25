@@ -31,7 +31,7 @@ const ActivityStats = ({
       ? "bg-red-100"
       : "bg-yellow-100";
   return (
-    <div className="bg-white shadow-md rounded-2xl p-4 flex  flex-1 flex-col gap-2">
+    <div className="bg-white shadow-md rounded-2xl p-4 flex flex-1 flex-col gap-2">
       {/* icon */}
       <div className="text-4xl text-blue-300 ">{icon} </div>
       {/* digits */}

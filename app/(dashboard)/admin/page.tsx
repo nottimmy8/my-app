@@ -16,7 +16,7 @@ const AdminPage = () => {
   return (
     <div className="p-4 flex gap-4 flex-col md:flex-row ">
       {/* LEFT */}
-      <div className="  grid grid-cols-1 lg:grid-cols-3  gap-4">
+      <div className="lg:w-2/3  grid grid-cols-1 lg:grid-cols-3  gap-4">
         {/* user card */}
         <div className="col-span-3">
           <div className=" flex gap-4 justify-between flex-wrap ">
@@ -28,20 +28,22 @@ const AdminPage = () => {
         </div>
         {/* Chart */}
 
-        {/* Count Chart  */}
-        <div className="sm:col-span-1 col-span-3  h-[400px]  ">
-          <RadialChart />
-        </div>
-        {/* Attendance Chart */}
-        <div className="   sm:col-span-2 col-span-3 h-[400px]  ">
-          <AttendanceChart />
+        <div className="w-full lg:col-span-3 grid grid-cols-3 gap-4">
+          {/* Count Chart  */}
+          <div className="w-full md:col-span-1 col-span-3  h-[400px]  ">
+            <RadialChart />
+          </div>
+          {/* Attendance Chart */}
+          <div className="w-full   md:col-span-2 col-span-3 h-[400px]  ">
+            <AttendanceChart />
+          </div>
         </div>
 
         {/* Bottom Chart */}
-        <div className=" sm:col-span-2 col-span-3  h-[500px] ">
+        <div className="w-full md:col-span-2 col-span-3  h-[450px] ">
           <FinanceChart />
         </div>
-        <div className="sm:col-span-1 col-span-3 flex   sm:flex-col h-[500px] gap-4">
+        <div className="md:col-span-1 col-span-3 flex    md:flex-col max-h-[450px] gap-4">
           <ActivityStats
             icon={<FaAddressCard />}
             icon2={<BiSolidChart />}
