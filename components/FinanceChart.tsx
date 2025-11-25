@@ -71,7 +71,7 @@ const data = [
 
 const FinanceChart = () => {
   return (
-    <div className="bg-white rounded-xl w-full h-full p-4 ">
+    <div className="bg-white rounded-2xl shadow-md h-full p-4 ">
       <div className="flex justify-between items-center">
         <h1 className="text-lg font-semibold ">Finance</h1>
         <Image src="/moreDark.png" alt="" width={20} height={20} />
@@ -79,7 +79,7 @@ const FinanceChart = () => {
       <ResponsiveContainer width="100%" height="90%">
         <LineChart
           width={500}
-          height={300}
+          height={400}
           data={data}
           margin={{
             top: 5,

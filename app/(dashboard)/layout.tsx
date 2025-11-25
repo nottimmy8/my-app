@@ -15,8 +15,10 @@ export default function DashboardLayout({
           href="/"
           className="flex items-center justify-center lg:justify-start  gap-2"
         >
-          <Image src={logo} alt="logo" width={32} height={32} />
-          <span className="hidden lg:block">SchoolHub</span>
+          <Image src={logo} alt="logo" width={40} height={40} />
+          <span className="hidden lg:block font-semibold text-gray-800">
+            Eduva
+          </span>
         </Link>
         <Menu />
       </div>

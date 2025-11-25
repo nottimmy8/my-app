@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useState } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
@@ -31,19 +32,23 @@ const events = [
 const EventCalendar = () => {
   const [value, onChange] = useState<Value>(new Date());
   return (
-    <div className=" bg-white p-4 rounded-md ">
+    <div className=" bg-white p-4 rounded-2xl ">
       <Calendar onChange={onChange} value={value} />
+      <div className="flex items-center justify-between">
+        <h1 className="text-xl font-semibold my-4 ">Agenda</h1>
+        <Image src="/moreDark.png" alt="" width={20} height={20} />
+      </div>
       <div className="flex flex-col gap-4     ">
         {events.map((event) => (
           <div
-            className=" flex items-center gap-3 rounded-2xl  odd:bg-[#cfceff] even:bg-[#fae27c] p-4 "
+            className=" flex items-center  justify-items-start shadow-md rounded-2xl  odd:bg-[#f3fafd] even:bg-[#fcf7d9] p-4 "
             key={event.id}
           >
             <h1 className="text-sm text-gray-700">{event.time} </h1>
-            <div className=" bg-white border-2 border-white h-full"></div>
-            <div className="  ">
+            <div className="ml-2   border-2 border-white h-[50px] rounded-full"></div>
+            <div className="ml-2  ">
               <span className=" text-sm text-gray-500">{event.grade} </span>
-              <h1 className="text-base font-semibold text-gray-700">
+              <h1 className="text-sm font-semibold text-gray-700">
                 {event.description}
               </h1>
             </div>
