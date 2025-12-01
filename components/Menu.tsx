@@ -2,7 +2,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-
 const menuItems = [
   {
     title: "MENU",
@@ -25,12 +24,17 @@ const menuItems = [
         href: "/student",
         visible: ["admin", "teacher"],
       },
-
       {
         icon: "/attendance.png",
         label: "Attendance",
         href: "/attendance",
         visible: ["admin", "teacher", "student", "parent"],
+      },
+      {
+        icon: "/finance.png",
+        label: "Finance",
+        href: "/payment",
+        visible: ["admin", "teacher", "student"],
       },
       {
         icon: "/calendar.png",
@@ -76,11 +80,7 @@ const Menu = () => {
     <div className="mt-4 text-sm">
       {menuItems.map((i) => (
         <div className="flex flex-col gap-2" key={i.title}>
-          <span
-            className=" text-gray-400 font-light 
-            opacity-0 group-hover:opacity-100 
-            transition-opacity duration-300"
-          >
+          <span className=" text-gray-400 font-light opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             {i.title}{" "}
           </span>
           {i.items.map((item) => (
@@ -89,18 +89,14 @@ const Menu = () => {
               key={item.label}
               className={`flex items-center gap-4 py-2 px-2 rounded-md transition-colors duration-300 ${
                 pathname === item.href ||
-                pathname.startsWith(item.href + "/admin")
+                pathname?.startsWith(item.href + "/admin")
                   ? "bg-[#F7F8FA] font-semibold text-gray-600"
                   : "text-gray-500 hover:bg-[#F7F8FA] hover:font-semibold"
               }`}
             >
               <Image src={item.icon} alt="" width={20} height={20} />
-              <span
-                className=" opacity-0 group-hover:opacity-100 
-                  transition-opacity duration-300
-                  whitespace-nowrap"
-              >
-                {item.label}{" "}
+              <span className=" opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
+                {item.label}
               </span>
             </Link>
           ))}
