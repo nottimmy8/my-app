@@ -1,4 +1,6 @@
+import FeesCard from "@/components/FeesCard";
 import PaymentChart from "@/components/PaymentChart";
+import PaymentTable from "@/components/PaymentTable";
 import React from "react";
 
 const Paymentpage = () => {
@@ -9,10 +11,14 @@ const Paymentpage = () => {
         <div className="w-full col-span-1 md:col-span-2 h-[400px] ">
           <PaymentChart />
         </div>
-        <div></div>
+        <div>
+          <FeesCard />
+        </div>
       </div>
       {/* Bottom */}
-      <div></div>
+      <div>
+        <PaymentTable />
+      </div>
     </div>
   );
 };
