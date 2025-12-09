@@ -239,7 +239,9 @@ const StudentPage = () => {
   return (
     <div className="m-4 bg-white rounded-md  shadow-md space-y-4 ">
       <TableNav title="All Student List" />
-      <Table column={columns} data={studentData} rowKey="id" />
+      <div className="overflow-x-auto">
+        <Table column={columns} data={studentData} rowKey="id" />
+      </div>
     </div>
   );
 };

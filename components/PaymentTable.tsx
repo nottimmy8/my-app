@@ -194,13 +194,12 @@ const PaymentTable = () => {
         <div className="flex items-center gap-2">
           <SquarePen color="#b0a6a6" size={17} />
           <Trash2 color="#b0a6a6" size={17} />
-          <RectangleEllipsis color="#b0a6a6" size={17} />
         </div>
       ),
     },
   ] as any;
   return (
-    <div className="bg-white rounded-md shadow-md space-y-4">
+    <div className=" bg-white rounded-md shadow-md space-y-4">
       <div className="flex items-center justify-between p-4 ">
         <h1 className="font-semibold text-gray-600 text-sm md:text-base ">
           Fees Collection
@@ -217,7 +216,9 @@ const PaymentTable = () => {
           <div className="gap-2 flex"></div>
         </div>
       </div>
-      <Table column={columns} data={paymentData} rowKey="id" />
+      <div className="overflow-x-auto">
+        <Table column={columns} data={paymentData} rowKey="id" />
+      </div>
     </div>
   );
 };
