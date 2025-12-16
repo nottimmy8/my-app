@@ -1,8 +1,13 @@
 "use client";
 import { Calendar, Views, momentLocalizer } from "react-big-calendar";
 import moment from "moment";
-import { CalendarEvents, CalendarToolbar, EventCard } from "./CalendarData";
+import SidebarAgenda, {
+  CalendarEvents,
+  CalendarToolbar,
+  EventCard,
+} from "./CalendarData";
 import "react-big-calendar/lib/css/react-big-calendar.css";
+import SidebarDailyEvents from "./SidebarDailyEvents";
 
 const localizer = momentLocalizer(moment);
 
@@ -25,7 +30,10 @@ const page = () => {
         />
       </div>
       {/* sidebar */}
-      <div></div>
+      <div className="col-span-1 space-y-6">
+        <SidebarAgenda />
+        <SidebarDailyEvents />
+      </div>
     </div>
   );
 };

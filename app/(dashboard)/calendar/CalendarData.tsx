@@ -28,7 +28,12 @@ export const CalendarEvents: CalendarEvent[] = [
   },
 ];
 
-export function CalendarToolbar({ label, onView }) {
+interface calendarToolbarProps {
+  label: string;
+  onView: any;
+}
+
+export function CalendarToolbar({ label, onView }: calendarToolbarProps) {
   return (
     <div className="flex justify-between items-center mb-5">
       <h2 className="font-semibold text-lg">{label}</h2>
@@ -54,6 +59,41 @@ export function EventCard({ event }: any) {
       className={`rounded-md text-xs px-2 py-1 font-medium shadow-sm ${event.color}`}
     >
       {event.title}
+    </div>
+  );
+}
+
+export default function SidebarAgenda() {
+  const agendaItems = [
+    {
+      label: "Big Day and Celebration Day",
+      color: "bg-purple-100 text-purple-700",
+    },
+    {
+      label: "Subject Presentation & Exam",
+      color: "bg-blue-100 text-blue-700",
+    },
+    {
+      label: "Fair, Exhibition & Performance",
+      color: "bg-green-100 text-green-700",
+    },
+    { label: "Official Meeting", color: "bg-yellow-100 text-yellow-700" },
+  ];
+
+  return (
+    <div className="bg-white p-4 rounded-xl shadow-sm">
+      <h3 className="font-semibold mb-4">Agenda</h3>
+
+      <div className="space-y-2">
+        {agendaItems.map((a, i) => (
+          <div
+            key={i}
+            className={`p-2 rounded-lg text-sm font-medium ${a.color}`}
+          >
+            {a.label}
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
