@@ -34,7 +34,7 @@ const Table = <T extends Record<string, any>>({
         <tbody className=" bg-white   divide-y divide-[#EAECF0]">
           {/* Table rows would go here */}
           {data.map((row, rowIndex) => (
-            <tr key={String(row[rowKey])} className="hover:bg-[#F7F8FA]">
+            <tr key={rowIndex} className="hover:bg-purple-50">
               {column.map((col, colIndex) => (
                 <td
                   key={colIndex}

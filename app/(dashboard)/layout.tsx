@@ -17,7 +17,7 @@ export default function DashboardLayout({
           transition-all duration-300 
           w-[70px] hover:w-60 
           overflow-hidden
-          shadow-md"
+          shadow-md h-screen"
       >
         <Link href="/" className="flex items-center  gap-2">
           {/* <Image src={logo} alt="logo" width={40} height={40} /> */}

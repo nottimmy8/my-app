@@ -212,7 +212,10 @@ const Noticepage = () => {
           </div>
 
           <div className="w-full h-[220px] overflow-y-auto ">
-            {selected.description.map((paragraph: string, index: number) => (
+            {(Array.isArray(selected.description)
+              ? selected.description
+              : [selected.description]
+            ).map((paragraph: string, index: number) => (
               <p key={index} className="text-sm text-gray-600 mb-2">
                 {paragraph}
               </p>
