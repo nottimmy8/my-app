@@ -67,11 +67,16 @@ const menuItems = [
         href: "/list/results",
         visible: ["admin", "teacher", "student", "parent"],
       },
-
+      {
+        icon: "/calendar.png",
+        label: "Events",
+        href: "/list/events",
+        visible: ["admin", "teacher", "student", "parent"],
+      },
       {
         icon: "/attendance.png",
         label: "Attendance",
-        href: "/attendance",
+        href: "/list/attendance",
         visible: ["admin", "teacher", "student"],
       },
       {
@@ -81,15 +86,15 @@ const menuItems = [
         visible: ["admin", "teacher", "student"],
       },
       {
-        icon: "/calendar.png",
+        icon: "/announcement.png",
         label: "Notice",
-        href: "/notice",
+        href: "/list/notice",
         visible: ["admin", "teacher", "student"],
       },
       {
         icon: "/calendar.png",
         label: "calendar",
-        href: "/calendar",
+        href: "/list/calendar",
         visible: ["admin", "teacher", "student"],
       },
       {
@@ -98,12 +103,12 @@ const menuItems = [
         href: "/library",
         visible: ["admin", "teacher", "student"],
       },
-      {
-        icon: "/message.png",
-        label: "Messages",
-        href: "/message",
-        visible: ["admin", "teacher", "student"],
-      },
+      // {
+      //   icon: "/message.png",
+      //   label: "Messages",
+      //   href: "/message",
+      //   visible: ["admin", "teacher", "student"],
+      // },
     ],
   },
   {
@@ -133,7 +138,7 @@ const menuItems = [
 const Menu = () => {
   const pathname = usePathname();
   return (
-    <div className="mt-4 text-sm     ">
+    <div className="mt-4 text-sm h-[calc(100vh-80px)] overflow-y-auto hide-scroll ">
       {menuItems.map((i) => (
         <div className="flex flex-col gap-2  " key={i.title}>
           <span className=" text-gray-400 font-light opacity-0 group-hover:opacity-100 transition-opacity duration-300">
@@ -152,7 +157,14 @@ const Menu = () => {
                       : "text-gray-500 hover:bg-[#F7F8FA] hover:font-semibold"
                   }`}
                 >
-                  <Image src={item.icon} alt="" width={20} height={20} />
+                  <div className="shrink-0 w-5 h-5">
+                    <Image
+                      src={item.icon}
+                      alt={item.label}
+                      width={20}
+                      height={20}
+                    />
+                  </div>
                   <span className=" opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap">
                     {item.label}
                   </span>

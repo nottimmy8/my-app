@@ -61,7 +61,7 @@ const ClassListPage = () => {
       {/* header */}
       <div className="flex items-center justify-between p-4 ">
         <h1 className="hidden md:block font-semibold text-gray-600 text-sm md:text-base ">
-          All Parent List
+          All Classes
         </h1>
         <div className="w-full md:w-auto flex  items-center justify-center gap-4 ">
           <TableSearch />

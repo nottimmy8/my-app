@@ -1,20 +1,20 @@
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
-import { examsData, role } from "@/lib/data";
+import { eventsData, role } from "@/lib/data";
 import { RectangleEllipsis, SquarePen, Trash2 } from "lucide-react";
 import Link from "next/link";
 import { FaFilter } from "react-icons/fa";
 import { HiAdjustmentsHorizontal } from "react-icons/hi2";
 import { LuPlus } from "react-icons/lu";
 
-const ExamListPage = () => {
+const EventListPage = () => {
   const columns = [
     {
-      key: "subject",
-      label: "Subject",
+      key: "title",
+      label: "Title",
       render: (_: any, data: any) => (
-        <span className="text-sm font-medium"> {data.subject}</span>
+        <span className="text-sm font-medium"> {data.title}</span>
       ),
     },
 
@@ -25,18 +25,26 @@ const ExamListPage = () => {
         <span className="text-sm font-medium">{data.class}</span>
       ),
     },
-    {
-      key: "teacher",
-      label: "Teacher",
-      render: (_: any, data: any) => (
-        <span className="text-sm font-medium">{data.teacher}</span>
-      ),
-    },
+
     {
       key: "date",
       label: "Date",
       render: (_: any, data: any) => (
         <span className="text-sm font-medium">{data.date}</span>
+      ),
+    },
+    {
+      key: "startTime",
+      label: "Start Time",
+      render: (_: any, data: any) => (
+        <span className="text-sm font-medium">{data.startTime}</span>
+      ),
+    },
+    {
+      key: "endTime",
+      label: "End Time",
+      render: (_: any, data: any) => (
+        <span className="text-sm font-medium">{data.endTime}</span>
       ),
     },
 
@@ -59,7 +67,7 @@ const ExamListPage = () => {
       {/* header */}
       <div className="flex items-center justify-between p-4 ">
         <h1 className="hidden md:block font-semibold text-gray-600 text-sm md:text-base ">
-          All Exams
+          All Assignments
         </h1>
         <div className="w-full md:w-auto flex  items-center justify-center gap-4 ">
           <TableSearch />
@@ -78,7 +86,7 @@ const ExamListPage = () => {
       </div>
       {/* table content */}
       <div className="w-full overflow-hidden overflow-x-auto">
-        <Table column={columns} data={examsData} rowKey="id" />
+        <Table column={columns} data={eventsData} rowKey="id" />
       </div>
       {/* pagination */}
       <Pagination />
@@ -86,4 +94,4 @@ const ExamListPage = () => {
   );
 };
 
-export default ExamListPage;
+export default EventListPage;

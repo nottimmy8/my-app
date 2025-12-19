@@ -1,14 +1,16 @@
 import Pagination from "@/components/Pagination";
 import Table from "@/components/Table";
 import TableSearch from "@/components/TableSearch";
-import { examsData, role } from "@/lib/data";
+import { lessonsData, role } from "@/lib/data";
 import { RectangleEllipsis, SquarePen, Trash2 } from "lucide-react";
+
 import Link from "next/link";
+
 import { FaFilter } from "react-icons/fa";
 import { HiAdjustmentsHorizontal } from "react-icons/hi2";
 import { LuPlus } from "react-icons/lu";
 
-const ExamListPage = () => {
+const LessonListPage = () => {
   const columns = [
     {
       key: "subject",
@@ -32,13 +34,6 @@ const ExamListPage = () => {
         <span className="text-sm font-medium">{data.teacher}</span>
       ),
     },
-    {
-      key: "date",
-      label: "Date",
-      render: (_: any, data: any) => (
-        <span className="text-sm font-medium">{data.date}</span>
-      ),
-    },
 
     {
       key: "actions",
@@ -59,7 +54,7 @@ const ExamListPage = () => {
       {/* header */}
       <div className="flex items-center justify-between p-4 ">
         <h1 className="hidden md:block font-semibold text-gray-600 text-sm md:text-base ">
-          All Exams
+          All Lesson
         </h1>
         <div className="w-full md:w-auto flex  items-center justify-center gap-4 ">
           <TableSearch />
@@ -78,7 +73,7 @@ const ExamListPage = () => {
       </div>
       {/* table content */}
       <div className="w-full overflow-hidden overflow-x-auto">
-        <Table column={columns} data={examsData} rowKey="id" />
+        <Table column={columns} data={lessonsData} rowKey="id" />
       </div>
       {/* pagination */}
       <Pagination />
@@ -86,4 +81,4 @@ const ExamListPage = () => {
   );
 };
 
-export default ExamListPage;
+export default LessonListPage;
